@@ -1,0 +1,32 @@
+1.Write a query to find no of passengers in passenger table
+SELECT COUNT(*) AS NO_OF_PASSENGERS FROM PASSENGER
+Query is interesting as it gives total no of passenger who have booked their tickets.
+
+
+2.Write a query to find passengers travelling in train numbered 'AIR101'
+ SELECT PASSENGER_ID,PASSENGER_NAME,ADDRESS FROM PASSENGER P,TRAIN T WHERE                   P.PASSENGER_ID=T.PASSENGER_ID AND TRAIN_NUMBER='AIR101'
+Query is interesting as it gives passenger details who are travelling in specific train.
+
+3. Write a query to find at what time the train numbered 'KER901' reaches KERALA
+SELECT TIME FROM ROUTE R,STATION S 
+WHERE R.STATION_ID=S.STATION_ID WHERE STATE='KERALA' 
+AND 
+TRAIN_ID IN ( SELECT TRAIN_ID FROM TRAIN WHERE TRAIN_NUMBER='KER901')
+Query is quite interesting in finding at what time the train reaches specified station. 
+
+
+
+
+
+1.Write a query to find passengers travelling in train 
+ SELECT PASSENGER_ID,PASSENGER_NAME,TRAIN_NUMBER
+ FROM PASSENGER P,TRAIN T 
+WHERE  P.PASSENGER_ID=T.PASSENGER_ID AND TRAIN_NUMBER IN ( SELECT TRAIN_NUMBER FROM TRAIN )
+Query is interesting as it gives passenger details who are travelling in train.
+
+2. Write a query to find at what time the train numbered 'KER901' reaches KERALA
+SELECT TIME FROM ROUTE R,STATION S 
+WHERE R.STATION_ID=S.STATION_ID WHERE STATE='KERALA' 
+AND 
+TRAIN_ID IN ( SELECT TRAIN_ID FROM TRAIN WHERE TRAIN_NUMBER='KER901')
+Query is quite interesting in finding at what time the train reaches specified station. 
